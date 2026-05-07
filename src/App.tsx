@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 import "./App.css";
 
 function App() {
@@ -29,7 +32,13 @@ function App() {
     setTasks(tasks.filter((_, i) => i !== index));
   };
 
-  
+  return (
+    <div className={darkMode ? "app dark" : "app light"}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <TaskForm addTask={addTask} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
+    </div>
+  );
 }
 
 export default App;
