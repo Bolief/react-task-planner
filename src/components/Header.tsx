@@ -6,7 +6,9 @@ type HeaderProps = {
 function Header({ darkMode, setDarkMode }: HeaderProps) {
   return (
     <header>
-      <h1>React Task Planner</h1>
+      <h1 style={{ color: darkMode ? "red" : "green" }}>
+        React Task Planner
+      </h1>
 
       <button onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "Light Mode" : "Dark Mode"}
